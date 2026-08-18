@@ -4,17 +4,9 @@
       "type": "http",
       "url": "https://mcp.monday.com/mcp"
     },
-    "granola": {
+    "tldv": {
       "type": "http",
-      "url": "https://mcp.granola.ai/mcp"
-    },
-    "fireflies": {
-      "type": "http",
-      "url": "https://mcp.fireflies.ai/mcp"
-    },
-    "fathom": {
-      "type": "http",
-      "url": "https://api.fathom.ai/mcp"
+      "url": "https://mcp.tldv.io/mcp"
     },
     "gmail": {
       "type": "http",

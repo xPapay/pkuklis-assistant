@@ -23,7 +23,7 @@ xPapay/pkuklis-assistant
 **2. Install**
 
 Find **Client Operations** in the list and click **Install**. You will be offered sign-in
-prompts for monday.com and your meeting notetaker — accept the ones you use, skip the rest.
+prompts for **monday.com** and **tl;dv** — accept both.
 
 **3. Connect Gmail and Calendar**
 
