@@ -1,0 +1,28 @@
+{
+  "mcpServers": {
+    "monday": {
+      "type": "http",
+      "url": "https://mcp.monday.com/mcp"
+    },
+    "granola": {
+      "type": "http",
+      "url": "https://mcp.granola.ai/mcp"
+    },
+    "fireflies": {
+      "type": "http",
+      "url": "https://mcp.fireflies.ai/mcp"
+    },
+    "fathom": {
+      "type": "http",
+      "url": "https://api.fathom.ai/mcp"
+    },
+    "gmail": {
+      "type": "http",
+      "url": ""
+    },
+    "google calendar": {
+      "type": "http",
+      "url": ""
+    }
+  }
+}

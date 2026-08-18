@@ -1,0 +1,14 @@
+{
+  "name": "personeo-plugins",
+  "owner": {
+    "name": "personeo.ai"
+  },
+  "plugins": [
+    {
+      "name": "client-ops",
+      "displayName": "Client Operations",
+      "source": "./client-ops",
+      "description": "A customer-success co-pilot. Reviews client email, meetings, and project state a few times a day, then surfaces one queue: what needs a reply, what is slipping, what to update, and what needs your personal judgment. Prepares drafts; you approve."
+    }
+  ]
+}
