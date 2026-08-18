@@ -25,7 +25,9 @@ Reconstruct the plan from the systems that hold it, in this order of authority:
 2. **Meetings** — what was actually said and agreed on calls, which is frequently newer than
    the board and often contradicts it.
 3. **Email** — dates and commitments made in writing between calls.
-4. **The client file** — context that no system records.
+4. **`~~chat`** — commitments the team made internally that never became a task. Usually the
+   only place these exist.
+5. **The client file** — context that no system records.
 
 Where these disagree, **the most recent explicit agreement wins**, whatever system it lives
 in. A date agreed on Tuesday's call supersedes a board field last edited in June. Say
@@ -56,8 +58,9 @@ one who always takes a fortnight.
 
 **Our own unfulfilled commitments.** These are the expensive ones. They damage trust, the
 client often will not chase them, and they are invisible in the tracker precisely because
-nobody created the task. Meeting transcripts are the main source — see
-[meeting](../meeting/SKILL.md).
+nobody created the task. Meeting transcripts and `~~chat` are the main sources — see
+[meeting](../meeting/SKILL.md). A promise made to a colleague in Slack is still a promise to
+the client, and it is the least likely of all to be tracked anywhere.
 
 ## Step 3 — Assess and recommend
 

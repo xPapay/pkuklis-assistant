@@ -31,6 +31,8 @@ Read the client file first — it holds context no system records. Then, in para
 - **`~~notetaker`** — recent meetings. Run [meeting](../meeting/SKILL.md)
   on any not yet processed.
 - **`~~calendar`** — what is scheduled, and when they were last met.
+- **`~~chat`** — the client's channels from `preferences.md`, for internal commitments and
+  blockers. Read only; never post.
 
 Then run [roadmap](../roadmap/SKILL.md).
 

@@ -46,6 +46,15 @@ For each client, gather in parallel where possible:
 - **`~~notetaker`** — meetings since the last run. Extract commitments via
   [meeting](../meeting/SKILL.md).
 - **`~~calendar`** — what is scheduled with this client, and when they were last met.
+- **`~~chat`** — only the channels named in `preferences.md`. Two things are being looked
+  for, and nothing else:
+  1. **Commitments the team made about this client** — "I'll send Acme the SSO docs
+     tomorrow". These never reach the tracker or email, nobody writes them down, and they
+     are the ones that quietly damage trust when missed.
+  2. **Blockers surfaced internally** before the client was told.
+
+  If a channel is **shared with the client** (Slack Connect), treat it as client
+  communication and triage it like email in Step 2.
 
 Then apply [roadmap](../roadmap/SKILL.md) to compare what was agreed against
 what has actually happened.
@@ -87,6 +96,11 @@ create the reply in `~~email` as a Gmail draft.
 
 The connector cannot send. That is the safety model — nothing leaves without the user
 pressing send in Gmail, so there is no approval step to build, and drafting freely is safe.
+
+**This does not extend to `~~chat`.** Slack can post, so the same freedom would be unsafe
+there. Never post to Slack, never reply in a thread, never DM — including in channels shared
+with a client. When something needs saying in Slack, put the suggested wording in the queue
+under **Needs you** and let the user paste it.
 
 Do not commit the user to anything they have not already agreed to: no new dates, no new
 scope, no "we'll have that to you by Thursday" unless Thursday is already written down in
@@ -131,6 +145,10 @@ Recommend: <specific next action>
 
 ### Suggested tracker updates (N)
 **<Client> — <item>**: <current> → <proposed>  ·  <evidence>
+
+### Untracked commitments (N)
+**<Client> — <who> promised <what>, <when>**  ·  said in <where>
+<not in the tracker — create a task, or drop it?>
 
 ### Quiet (N)
 <Client> — <last contact, next milestone, nothing needed>

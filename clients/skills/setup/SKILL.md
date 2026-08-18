@@ -38,7 +38,7 @@ the user's judgment, their voice, and the mapping between systems.
 
 ## Step 1 — Check connections
 
-Check which of `~~email`, `~~tracker`, `~~notetaker`, `~~calendar` respond.
+Check which of `~~email`, `~~tracker`, `~~notetaker`, `~~calendar`, `~~chat` respond.
 
 Report the result as a simple checklist. For anything missing, give the exact click path
 rather than an explanation:
@@ -49,7 +49,7 @@ rather than an explanation:
 
 `~~email` and `~~tracker` are required — stop and wait if either is missing. A notetaker is
 strongly recommended but optional; note what will be missing without it (commitments made
-verbally on calls). Calendar is optional.
+verbally on calls). Calendar and chat are optional.
 
 ## Step 2 — Learn the communication style
 
@@ -122,6 +122,15 @@ rather than compose:
 3. **Anything you always want to write yourself?** (defaults offered: pricing, contract or
    scope changes, complaints, anything involving a named individual's performance)
 4. **How much drafting?** — full drafts ready to send, or short bullet answers to expand?
+5. **Which Slack channels are about clients?** If `~~chat` is connected, list the channels
+   the user is in, mark which look client-related, and let them confirm. Flag any shared
+   with a client (Slack Connect) separately — those carry actual client communication, not
+   just internal chatter, and are triaged like email.
+
+   Name the channels explicitly in `preferences.md`. **Do not offer to include DMs**, and if
+   the user asks for them, explain why not: their DMs hold performance, pay, and
+   interpersonal conversations that this assistant should never process. Chat is read-only
+   in all cases — nothing is ever posted.
 
 Write the answers to `preferences.md`. Keep the defaults visible in the file so the user can
 see what they accepted without re-running setup.

@@ -23,7 +23,7 @@ xPapay/pkuklis-assistant
 **2. Install**
 
 Find **Client Operations** in the list and click **Install**. You will be offered sign-in
-prompts for **monday.com** and **tl;dv** — accept both.
+prompts for **monday.com**, **tl;dv**, and **Slack** — accept all three.
 
 **3. Connect Gmail and Calendar**
 
@@ -84,6 +84,10 @@ By design, not by limitation:
 - **It cannot send email.** Drafts only.
 - **It will not change monday.com** without you approving each change.
 - **It will not touch your calendar.** It suggests; you decide.
+- **It never posts to Slack.** Slack is read-only — it is used to notice commitments your
+  team made about a client, and shared client channels. If something needs saying there, it
+  gives you the wording to paste.
+- **It never reads your DMs.** Only the channels you name during setup.
 - **It hands back anything sensitive** — pricing, contracts, complaints, conflict, anything
   about a specific person — rather than drafting it.
 

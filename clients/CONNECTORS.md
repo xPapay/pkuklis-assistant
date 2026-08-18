@@ -17,11 +17,17 @@ products, so swapping a tool later does not require rewriting the skills.
 | Project tracker | `~~tracker` | monday.com | Asana, Linear, Notion |
 | Meeting notes | `~~notetaker` | tl;dv | Granola, Fireflies, Fathom, Otter |
 | Calendar | `~~calendar` | Google Calendar (enabled in Cowork settings) | Microsoft 365 |
+| Team chat | `~~chat` | Slack | Microsoft Teams |
 
 ## Two kinds of connector
 
-**Bundled (hosted MCP).** monday.com and tl;dv ship in `.mcp.json` with their server URLs.
-Installing the plugin offers a sign-in prompt for each — one OAuth click, no configuration.
+**Bundled (hosted MCP).** monday.com, tl;dv, and Slack ship in `.mcp.json` with their server
+URLs. Installing the plugin offers a sign-in prompt for each — one OAuth click, no
+configuration.
+
+Slack is the one exception to "no configuration": it does not support dynamic client
+registration, so its `clientId` is pinned in `.mcp.json`. That is the same public client id
+Anthropic pins across their own plugins. Leave it alone — without it, sign-in cannot complete.
 
 **First-party.** Gmail and Google Calendar are Claude's own connectors. They appear in
 `.mcp.json` with an empty URL because they cannot be bundled with a URL; they are switched
@@ -54,6 +60,24 @@ a human action. There is no configuration that changes this, and none is wanted.
 
 **monday.com writes are real.** The tracker connector can modify boards. Every skill here
 requires explicit approval before any write. See `queue/SKILL.md`.
+
+**Slack can post, and this plugin never does.** Unlike Gmail, the Slack connector holds
+`chat:write` — it is technically able to send messages into channels and DMs. Nothing here
+may use it. Slack is a **read-only context source**.
+
+The reason is that Gmail's safety comes from the platform: it physically cannot send, so a
+bad draft is harmless. Slack has no such protection. A posted message is instant, visible to
+everyone in the channel, and cannot be unsent. So the restriction has to be a rule instead,
+and rules only hold if they are absolute — "post only when it seems safe" would not survive
+contact with a plausible-looking edge case.
+
+If something needs saying in Slack, put the suggested text in the queue and let the user
+paste it.
+
+**Do not read DMs.** Only channels the user named during setup. A Head of Customer Success's
+DMs carry performance conversations, compensation, and complaints about colleagues — exactly
+the material this assistant is supposed to hand back rather than process. It should not be
+swept at all.
 
 **Calendar is read-mostly.** Skills may read availability and propose times, but must not
 create, move, or cancel events without confirmation.
