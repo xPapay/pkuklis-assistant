@@ -1,10 +1,10 @@
 ---
-name: roadmap-check
+name: roadmap
 description: Compare what was agreed with a client against what has actually happened, and identify what is slipping. Use inside the queue, when reviewing a single client, or when the user asks whether an onboarding is on track.
-argument-hint: "<client name> or omit when called from /queue"
+argument-hint: "<client name> or omit when called from /clients:queue"
 ---
 
-# /roadmap-check
+# /clients:roadmap
 
 > If you see unfamiliar placeholders like `~~tracker`, see [CONNECTORS.md](../../CONNECTORS.md).
 
@@ -57,7 +57,7 @@ one who always takes a fortnight.
 **Our own unfulfilled commitments.** These are the expensive ones. They damage trust, the
 client often will not chase them, and they are invisible in the tracker precisely because
 nobody created the task. Meeting transcripts are the main source — see
-[meeting-followup](../meeting-followup/SKILL.md).
+[meeting](../meeting/SKILL.md).
 
 ## Step 3 — Assess and recommend
 

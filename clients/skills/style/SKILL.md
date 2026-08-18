@@ -1,10 +1,10 @@
 ---
-name: communication-style
+name: style
 description: Learn and apply the user's own writing voice. Use when building the style profile during setup, when drafting any message on the user's behalf, or when the user corrects a draft and that correction should be remembered.
 argument-hint: "'learn' to rebuild the profile, or omit when drafting"
 ---
 
-# /communication-style
+# /clients:style
 
 > If you see unfamiliar placeholders like `~~email`, see [CONNECTORS.md](../../CONNECTORS.md).
 
@@ -60,7 +60,7 @@ So:
 - Record the address form **per person**, not per client and not globally, in the client
   file. Two people at the same company can differ.
 - Determine it from what the user has actually sent that person before. If there is no prior
-  Slovak thread with that person, **ask** — this is a legitimate question for `/setup` or for
+  Slovak thread with that person, **ask** — this is a legitimate question for `/clients:setup` or for
   the queue, and much cheaper than getting it wrong once.
 - Watch for a switch mid-history. If the user moved from `vy` to `ty` with someone, the
   later form wins.

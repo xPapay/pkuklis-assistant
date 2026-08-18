@@ -4,7 +4,7 @@ description: First-run setup for the client operations assistant. Connects accou
 argument-hint: "(no arguments) or 'style' | 'clients' | 'preferences' to redo one part"
 ---
 
-# /setup
+# /clients:setup
 
 > If you see unfamiliar placeholders like `~~email`, see [CONNECTORS.md](../../CONNECTORS.md).
 
@@ -33,7 +33,7 @@ the user's judgment, their voice, and the mapping between systems.
 
 > **Before writing anything, confirm the session is inside a Cowork project.** If it is not,
 > tell the user plainly: "I need a project to keep your settings in — create one from
-> **Projects → +** in the sidebar, then run `/setup` again." Do not write to a scratch
+> **Projects → +** in the sidebar, then run `/clients:setup` again." Do not write to a scratch
 > directory; the files would be lost.
 
 ## Step 1 — Check connections
@@ -59,7 +59,7 @@ Read roughly **60–100 of the user's own sent messages** from `~~email`, favour
 external client addresses over internal ones, and spread across several months rather than
 one busy week.
 
-Then follow [communication-style](../communication-style/SKILL.md) to build the profile and
+Then follow [style](../style/SKILL.md) to build the profile and
 write `style-profile.md`.
 
 Present the profile back **as prose the user can react to**, not as a table of scores. Give
@@ -108,7 +108,7 @@ For each confirmed client, write `clients/<slug>.md`:
 <judgment calls, sensitivities, history that no system records>
 ```
 
-Leave sections empty rather than inventing content. `/queue` and `/client` will fill them in
+Leave sections empty rather than inventing content. `/clients:queue` and `/client` will fill them in
 over time.
 
 ## Step 4 — Set preferences
@@ -130,7 +130,7 @@ see what they accepted without re-running setup.
 
 Do not end setup with a configuration summary. End it with output the user can judge.
 
-Run `/queue` on real current data and show the result. Then pick **two recent client emails
+Run `/clients:queue` on real current data and show the result. Then pick **two recent client emails
 the user already answered themselves**, draft replies without looking at their actual
 response, and show both side by side.
 
@@ -153,14 +153,14 @@ worst possible failure, because it still looks like it worked.
 
 So:
 
-1. Create **one** scheduled `/queue` run, a few minutes out.
+1. Create **one** scheduled `/clients:queue` run, a few minutes out.
 2. When it completes, check its output actually used the setup: are the clients from
    `clients/` named? Does the drafting reflect `style-profile.md`?
 3. **If yes** — create the recurring tasks at the times from Step 4 and tell the user they
    are set.
 4. **If no** — do not schedule the rest. Tell the user plainly that scheduled runs cannot see
-   their settings yet, that `/queue` works normally when they run it themselves, and that
+   their settings yet, that `/clients:queue` works normally when they run it themselves, and that
    this needs fixing before automating. Then report which files were unreachable.
 
-Finally, tell the user how to change their mind later: *"Ask me to redo any part — `/setup
-style`, `/setup clients`, or `/setup preferences`."*
+Finally, tell the user how to change their mind later: *"Ask me to redo any part — `/clients:setup
+style`, `/clients:setup clients`, or `/clients:setup preferences`."*

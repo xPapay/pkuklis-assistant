@@ -1,10 +1,10 @@
 ---
-name: meeting-followup
+name: meeting
 description: Turn a recorded client conversation into decisions, commitments, owners, deadlines, and blockers. Use after a client call, when the queue needs to know what was agreed verbally, or when the user asks what came out of a meeting.
 argument-hint: "<client or meeting name> — omit to use the most recent client meeting"
 ---
 
-# /meeting-followup
+# /clients:meeting
 
 > If you see unfamiliar placeholders like `~~notetaker`, see [CONNECTORS.md](../../CONNECTORS.md).
 

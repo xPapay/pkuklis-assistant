@@ -1,10 +1,10 @@
 ---
-name: client-status
+name: status
 description: Assemble the full current picture for one client — what is happening, what was agreed, what each side is waiting for, and what should happen next. Use before a call, when the user asks about a specific client, or when a queue item needs deeper context.
 argument-hint: "<client name>"
 ---
 
-# /client-status
+# /clients:status
 
 > If you see unfamiliar placeholders like `~~tracker`, see [CONNECTORS.md](../../CONNECTORS.md).
 
@@ -28,11 +28,11 @@ Read the client file first — it holds context no system records. Then, in para
 
 - **`~~email`** — the last ~30 days of threads both ways, plus any older thread still open.
 - **`~~tracker`** — board state, milestones, dates, owners, recent activity.
-- **`~~notetaker`** — recent meetings. Run [meeting-followup](../meeting-followup/SKILL.md)
+- **`~~notetaker`** — recent meetings. Run [meeting](../meeting/SKILL.md)
   on any not yet processed.
 - **`~~calendar`** — what is scheduled, and when they were last met.
 
-Then run [roadmap-check](../roadmap-check/SKILL.md).
+Then run [roadmap](../roadmap/SKILL.md).
 
 ## Output
 
@@ -56,7 +56,7 @@ Then run [roadmap-check](../roadmap-check/SKILL.md).
 <what — promised when — by whom — is it tracked>
 
 ## Slipping
-<from roadmap-check, or "nothing">
+<from /clients:roadmap, or "nothing">
 
 ## People
 <name — role — what they care about — address form>

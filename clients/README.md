@@ -17,7 +17,7 @@ You need a paid Claude plan (Pro, Max, Team, or Enterprise) and the Claude deskt
 In Claude, open **Customize → Plugins → Add marketplace** and paste:
 
 ```
-<your-github-org>/pkuklis-assistant
+xPapay/pkuklis-assistant
 ```
 
 **2. Install**
@@ -43,7 +43,7 @@ assistant keeps what it learns about you. Start a session inside it.
 Type:
 
 ```
-/setup
+/clients:setup
 ```
 
 It takes about fifteen minutes. It will connect the remaining pieces, read your sent mail to
@@ -53,7 +53,7 @@ showing you real output so you can judge it.
 **6. Use it**
 
 ```
-/queue
+/clients:queue
 ```
 
 Run it two or three times a day, or let setup schedule it for you. Scheduled runs happen in
@@ -65,11 +65,11 @@ the cloud, so the queue is ready even if your laptop was closed.
 
 | Command | What it does |
 |---|---|
-| `/queue` | The main review. What needs attention across every client. |
-| `/client-status <name>` | Full picture of one client. Good five minutes before a call. |
-| `/meeting-followup` | Turn a recorded call into decisions, commitments, and deadlines. |
-| `/setup style` | Redo the writing-style profile. |
-| `/setup clients` | Add or remove clients. |
+| `/clients:queue` | The main review. What needs attention across every client. |
+| `/clients:status <name>` | Full picture of one client. Good five minutes before a call. |
+| `/clients:meeting` | Turn a recorded call into decisions, commitments, and deadlines. |
+| `/clients:setup style` | Redo the writing-style profile. |
+| `/clients:setup clients` | Add or remove clients. |
 
 **The assistant gets better when you correct it.** If a draft is wrong, say what was wrong —
 it is written into the style profile and applied from then on. A few corrections in the first

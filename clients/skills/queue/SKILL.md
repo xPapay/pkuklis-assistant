@@ -4,7 +4,7 @@ description: The main review. Sweeps client email, meetings, and tracker state, 
 argument-hint: "(no arguments) or a client name to limit the sweep"
 ---
 
-# /queue
+# /clients:queue
 
 > If you see unfamiliar placeholders like `~~email`, see [CONNECTORS.md](../../CONNECTORS.md).
 
@@ -28,7 +28,7 @@ Volume is not the metric; not having to double-check is.
 ## Before you start
 
 Read `style-profile.md`, `preferences.md`, and the `clients/` files from the project folder.
-If they are missing, say so and suggest `/setup` — do not guess at the user's voice.
+If they are missing, say so and suggest `/clients:setup` — do not guess at the user's voice.
 
 Note the current date and time. "Overdue" and "gone quiet" are meaningless without it.
 
@@ -44,10 +44,10 @@ For each client, gather in parallel where possible:
 - **`~~tracker`** — item status, due dates, assignees, and recent updates on the client's
   board.
 - **`~~notetaker`** — meetings since the last run. Extract commitments via
-  [meeting-followup](../meeting-followup/SKILL.md).
+  [meeting](../meeting/SKILL.md).
 - **`~~calendar`** — what is scheduled with this client, and when they were last met.
 
-Then apply [roadmap-check](../roadmap-check/SKILL.md) to compare what was agreed against
+Then apply [roadmap](../roadmap/SKILL.md) to compare what was agreed against
 what has actually happened.
 
 If a connector fails or returns nothing, say so in the output. A silent gap reads as "all
@@ -82,7 +82,7 @@ build, and this assistant's entire value rests on the user not having to double-
 
 ## Step 3 — Prepare drafts
 
-For each **Draft** item, follow [communication-style](../communication-style/SKILL.md) and
+For each **Draft** item, follow [style](../style/SKILL.md) and
 create the reply in `~~email` as a Gmail draft.
 
 The connector cannot send. That is the safety model — nothing leaves without the user
@@ -101,7 +101,7 @@ a blocker cleared — propose the update. State it as a diff:
 > *Acme — "Data migration" is In progress, due 12 Aug (6 days ago). On the 14 Aug call Jana
 > said it finished Tuesday. → Set Done, completed 12 Aug.*
 
-**Never write to `~~tracker` inside `/queue`.** List the proposals and let the user pick.
+**Never write to `~~tracker` inside `/clients:queue`.** List the proposals and let the user pick.
 Apply only what they approve, then confirm what changed.
 
 ## Step 5 — Output

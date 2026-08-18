@@ -17,7 +17,7 @@ You need a paid Claude plan (Pro, Max, Team, or Enterprise) and the Claude deskt
 In Claude, open **Customize → Plugins → Add marketplace** and paste:
 
 ```
-<your-github-org>/pkuklis-assistant
+xPapay/pkuklis-assistant
 ```
 
 **2. Install**
@@ -43,7 +43,7 @@ assistant keeps what it learns about you. Start a session inside it.
 Type:
 
 ```
-/setup
+/clients:setup
 ```
 
 It takes about fifteen minutes. It will connect the remaining pieces, read your sent mail to
@@ -53,7 +53,7 @@ showing you real output so you can judge it.
 **6. Use it**
 
 ```
-/queue
+/clients:queue
 ```
 
 Run it two or three times a day, or let setup schedule it for you. Scheduled runs happen in
@@ -65,11 +65,11 @@ the cloud, so the queue is ready even if your laptop was closed.
 
 | Command | What it does |
 |---|---|
-| `/queue` | The main review. What needs attention across every client. |
-| `/client-status <name>` | Full picture of one client. Good five minutes before a call. |
-| `/meeting-followup` | Turn a recorded call into decisions, commitments, and deadlines. |
-| `/setup style` | Redo the writing-style profile. |
-| `/setup clients` | Add or remove clients. |
+| `/clients:queue` | The main review. What needs attention across every client. |
+| `/clients:status <name>` | Full picture of one client. Good five minutes before a call. |
+| `/clients:meeting` | Turn a recorded call into decisions, commitments, and deadlines. |
+| `/clients:setup style` | Redo the writing-style profile. |
+| `/clients:setup clients` | Add or remove clients. |
 
 **The assistant gets better when you correct it.** If a draft is wrong, say what was wrong —
 it is written into the style profile and applied from then on. A few corrections in the first
@@ -93,7 +93,7 @@ By design, not by limitation:
 
 ```
 .claude-plugin/marketplace.json   makes this repo installable as a marketplace
-client-ops/
+clients/
   .claude-plugin/plugin.json      manifest
   .mcp.json                       bundled connectors (hosted MCP + first-party placeholders)
   CONNECTORS.md                   the ~~category placeholder convention
@@ -103,21 +103,23 @@ client-ops/
 Everything is markdown and JSON — no build step, no server, no custom MCP. Edit a `SKILL.md`,
 push, and users get it on the next marketplace **Update**.
 
-Skills are invoked as slash commands (`/queue`) and are also picked up automatically when
+Skills are invoked as slash commands (`/clients:queue`) and are also picked up automatically when
 relevant. `queue` is the product; the others support it.
 
 **Per-user state never lives in this repo.** The style profile, client files, and preferences
-are written into the user's own Cowork project folder by `/setup`. That separation is what
+are written into the user's own Cowork project folder by `/clients:setup`. That separation is what
 makes the plugin distributable to more than one person.
 
 ### Known things to verify
 
-- **Confirm the exact slash-command strings on the first real install.** Anthropic's own
-  plugins document namespaced commands (`/finance:reconciliation`), so these may surface as
-  `/client-ops:queue` rather than `/queue`. If so, correct the user-facing instructions above
-  before handing over — the first command a non-technical user types must work.
+- **Confirm the exact slash-command strings on the first real install.** These are
+  documented here in the namespaced form (`/clients:queue`), matching how Anthropic's own
+  plugins present commands (`/finance:reconciliation`). If Cowork also accepts the bare form
+  (`/queue`), prefer that in the user-facing instructions — it is one less thing to type and
+  to mistype. Either way, verify before handing over: the first command a non-technical user
+  types has to work.
 - Scheduled tasks run in the cloud against connectors and files saved to your Claude account.
-  Confirm a scheduled `/queue` can reach the local project folder; if it cannot, move
+  Confirm a scheduled `/clients:queue` can reach the local project folder; if it cannot, move
   `style-profile.md` and `clients/` to a location the cloud run can read.
 - Cowork plugins were still in beta at the time of writing and install locally per user. On
   Team/Enterprise an admin can push the plugin to everyone instead of the paste-a-URL flow.
