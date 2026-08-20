@@ -18,6 +18,8 @@ products, so swapping a tool later does not require rewriting the skills.
 | Meeting notes | `~~notetaker` | tl;dv | Granola, Fireflies, Fathom, Otter |
 | Calendar | `~~calendar` | Google Calendar (enabled in Cowork settings) | Microsoft 365 |
 | Team chat | `~~chat` | Slack | Microsoft Teams |
+| Product knowledge | `~~product` | Butterstaff | any docs/codebase Q&A source |
+| Customer data | `~~customer data` | Butterstaff | data warehouse, admin API |
 
 ## Two kinds of connector
 
@@ -51,6 +53,35 @@ Two ways to connect it, and the difference matters:
 **Do not use `tldv-public/tldv-mcp-server` from GitHub.** It is a self-hosted stdio server
 needing Docker or Node, a `TLDV_API_KEY`, and a tl;dv Business/Enterprise plan — three
 things this plugin exists to avoid.
+
+## A note on Butterstaff
+
+Butterstaff answers two different kinds of question, so it fills two placeholders:
+
+- **`~~product`** — how the product actually works, answered from the codebase. This is the
+  one that matters most. The single largest category of client email is the same product
+  questions asked repeatedly, and this turns answering them from *the model explains
+  plausibly* into *the answer is retrieved from the source of truth*.
+- **`~~customer data`** — account and usage data retrieved from the database. This is the
+  only connector that knows whether a client is actually **using** the product, as opposed to
+  what a project board claims about them.
+
+It is not in Anthropic's connector directory — it is added by URL. If the `url` field above
+is empty, it has not been configured; `/clients:setup` will walk the user through adding it
+as a custom connector.
+
+### Two rules when using it
+
+**Never put one client's data in another client's message.** `~~customer data` can retrieve
+across the whole customer base. A draft to one client must contain only facts about that
+client. Do not include comparisons, benchmarks, or "other customers typically…" figures
+derived from live data — treat any cross-client number as disclosure until the user says
+otherwise.
+
+**Retrieved is not the same as verified.** Attribute product claims in a draft to what
+`~~product` returned, and if the answer is ambiguous or looks out of date, treat the item as
+**Need context** rather than drafting a confident explanation. Being wrong about how the
+product works, in writing, to a client, is expensive to walk back.
 
 ## Important connector behavior
 

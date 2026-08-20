@@ -69,7 +69,7 @@ Every incoming message and every detected deviation resolves to exactly one of f
 | Outcome | When | What you do |
 |---|---|---|
 | **Draft** | Routine. You have the facts. The answer is not contentious. | Write a Gmail draft |
-| **Need context** | The right answer depends on something you cannot see | Ask the user the specific question — never a vague "please review" |
+| **Need context** | The right answer depends on something you cannot see, and `~~product` cannot answer it either | Ask the user the specific question — never a vague "please review" |
 | **Personal** | Judgment, relationship, money, or conflict | Summarize and hand back. Do not draft |
 | **No action** | FYI, thanks, newsletters, already handled | Leave it out of the queue entirely |
 
@@ -94,6 +94,18 @@ build, and this assistant's entire value rests on the user not having to double-
 For each **Draft** item, follow [style](../style/SKILL.md) and
 create the reply in `~~email` as a Gmail draft.
 
+**If the reply turns on how the product works, ask `~~product` first.** Do not explain a
+feature from memory. Repeated product questions are the largest single category of client
+mail, and they are exactly where a confident wrong answer does the most damage — so this is
+the step that decides whether drafts are worth the user's trust.
+
+It also changes what is draftable: a question that would otherwise be **Need context** for
+lack of a fact becomes a normal draft once `~~product` supplies it. Every item moved that way
+is one less thing for the user to handle personally.
+
+If `~~product` is unavailable, gives an ambiguous answer, or contradicts what the client was
+previously told, classify as **Need context** and say which.
+
 The connector cannot send. That is the safety model — nothing leaves without the user
 pressing send in Gmail, so there is no approval step to build, and drafting freely is safe.
 
@@ -101,6 +113,12 @@ pressing send in Gmail, so there is no approval step to build, and drafting free
 there. Never post to Slack, never reply in a thread, never DM — including in channels shared
 with a client. When something needs saying in Slack, put the suggested wording in the queue
 under **Needs you** and let the user paste it.
+
+**Never put one client's data into another client's message.** `~~customer data` reaches the
+whole customer base, so this is a real risk rather than a theoretical one. A draft may
+contain only facts about its own recipient — no benchmarks, no "other customers typically",
+no comparisons drawn from live data. Treat any cross-client figure as disclosure unless the
+user has explicitly approved it.
 
 Do not commit the user to anything they have not already agreed to: no new dates, no new
 scope, no "we'll have that to you by Thursday" unless Thursday is already written down in

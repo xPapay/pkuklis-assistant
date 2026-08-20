@@ -105,6 +105,15 @@ stop being usable the moment the situation differs slightly from the one they ca
 
 Match structure, length, directness, and hedging. Let the words be new.
 
+**One deliberate exception: explaining how the product works.** The user has said an AI-written
+explanation was clearer than his own. Take that at face value — for product explanations,
+optimize for the reader understanding it, not for sounding exactly like him. Keep his
+register, greeting, and sign-off so the message is recognisably his; let the explanation
+itself be as clear as it can be.
+
+This applies only to explanation. Everywhere else — chasing, apologising, negotiating,
+declining — match his voice as closely as the profile allows.
+
 **Never invent facts to fill a gap.** No dates that were not agreed, no numbers, no names, no
 "as discussed" for something you cannot find. If the draft needs a fact you do not have, that
 is not a drafting problem — the item belongs in **Need context** in the queue.

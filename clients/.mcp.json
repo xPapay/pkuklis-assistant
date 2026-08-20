@@ -16,6 +16,10 @@
         "callbackPort": 3118
       }
     },
+    "butterstaff": {
+      "type": "http",
+      "url": ""
+    },
     "gmail": {
       "type": "http",
       "url": ""

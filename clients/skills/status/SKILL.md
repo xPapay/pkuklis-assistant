@@ -33,6 +33,8 @@ Read the client file first — it holds context no system records. Then, in para
 - **`~~calendar`** — what is scheduled, and when they were last met.
 - **`~~chat`** — the client's channels from `preferences.md`, for internal commitments and
   blockers. Read only; never post.
+- **`~~customer data`** — actual account and usage state. What are they really doing, and
+  does it match what the tracker claims was delivered?
 
 Then run [roadmap](../roadmap/SKILL.md).
 
@@ -42,6 +44,7 @@ Then run [roadmap](../roadmap/SKILL.md).
 # <Client> — <date>
 
 **Stage:** <onboarding / live / at risk>  ·  **Last contact:** <when, how>
+**Actual usage:** <from ~~customer data — or "not available">
 **Next milestone:** <what> — <date> — <on track / at risk / late>
 
 ## Where things stand

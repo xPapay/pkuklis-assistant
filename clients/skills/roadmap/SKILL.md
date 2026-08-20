@@ -48,6 +48,7 @@ Look for each of these:
 | **Sequence broken** | Step 4 is moving while step 2 never finished |
 | **Next step undefined** | Current phase ending, nothing planned after it |
 | **Stale tracker** | Board says one thing, email and calls say another |
+| **Adoption gap** | Marked delivered, but `~~customer data` shows it unused |
 
 Two that are easy to miss and matter most:
 
@@ -55,6 +56,12 @@ Two that are easy to miss and matter most:
 quiet is normal for one client and an early churn signal for another. A client who replied
 within the hour for two months and has now gone quiet for five days is a stronger signal than
 one who always takes a fortnight.
+
+**The adoption gap.** Every other source describes what was *delivered*; `~~customer data`
+is the only one that knows whether it is *used*. A milestone marked complete against an
+account with no activity is not a completed milestone — it is a churn signal that no board,
+inbox, or transcript can show you. Check usage against the milestones that claim to be done,
+especially during onboarding.
 
 **Our own unfulfilled commitments.** These are the expensive ones. They damage trust, the
 client often will not chase them, and they are invisible in the tracker precisely because

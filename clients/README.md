@@ -25,6 +25,11 @@ xPapay/pkuklis-assistant
 Find **Client Operations** in the list and click **Install**. You will be offered sign-in
 prompts for **monday.com**, **tl;dv**, and **Slack** — accept all three.
 
+If your team uses **Butterstaff**, add it under **Customize → Connectors → Add custom
+connector** with the URL your team uses. It is optional, but it is what lets the assistant
+answer product questions from the source rather than guessing — the largest single category
+of client mail.
+
 **3. Connect Gmail and Calendar**
 
 These are Claude's own connectors and are switched on separately, under
@@ -68,6 +73,7 @@ the cloud, so the queue is ready even if your laptop was closed.
 | `/clients:queue` | The main review. What needs attention across every client. |
 | `/clients:status <name>` | Full picture of one client. Good five minutes before a call. |
 | `/clients:meeting` | Turn a recorded call into decisions, commitments, and deadlines. |
+| `/clients:roadmap` | Check one client against the agreed plan. |
 | `/clients:setup style` | Redo the writing-style profile. |
 | `/clients:setup clients` | Add or remove clients. |
 

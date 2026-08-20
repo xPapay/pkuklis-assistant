@@ -38,7 +38,8 @@ the user's judgment, their voice, and the mapping between systems.
 
 ## Step 1 — Check connections
 
-Check which of `~~email`, `~~tracker`, `~~notetaker`, `~~calendar`, `~~chat` respond.
+Check which of `~~email`, `~~tracker`, `~~notetaker`, `~~calendar`, `~~chat`, `~~product`
+respond.
 
 Report the result as a simple checklist. For anything missing, give the exact click path
 rather than an explanation:
@@ -46,6 +47,14 @@ rather than an explanation:
 - Gmail / Google Calendar → **Customize → Connectors**, find it, **Connect**, sign in.
 - monday.com / notetaker → these were offered during install. If skipped, they are under
   **Customize → Plugins → Client Operations → Connectors**.
+
+If `~~product` is missing and `.mcp.json` has an empty url for it, it has to be added as a
+custom connector: **Customize → Connectors → Add custom connector**, then paste the URL and
+sign in. Ask the user for the URL if it is not in `preferences.md`, and record it there once
+it works so nobody has to find it again.
+
+It is optional but high value — without it, product questions cannot be answered from source
+and will be handed back rather than drafted. Say so plainly rather than quietly degrading.
 
 `~~email` and `~~tracker` are required — stop and wait if either is missing. A notetaker is
 strongly recommended but optional; note what will be missing without it (commitments made
@@ -142,6 +151,10 @@ Do not end setup with a configuration summary. End it with output the user can j
 Run `/clients:queue` on real current data and show the result. Then pick **two recent client emails
 the user already answered themselves**, draft replies without looking at their actual
 response, and show both side by side.
+
+If `~~product` is connected, make one of the two a **product question** — the kind the user
+answers over and over. That is the single biggest category of their mail, and the clearest
+demonstration of whether this saves them real time.
 
 This is the moment the user decides whether to keep using the assistant. Ask what is off
 about the drafts, and write the answer into `style-profile.md` under **Corrections**. Two or
