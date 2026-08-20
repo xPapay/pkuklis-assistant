@@ -121,12 +121,8 @@ makes the plugin distributable to more than one person.
 
 ### Known things to verify
 
-- **Confirm the exact slash-command strings on the first real install.** These are
-  documented here in the namespaced form (`/clients:queue`), matching how Anthropic's own
-  plugins present commands (`/finance:reconciliation`). If Cowork also accepts the bare form
-  (`/queue`), prefer that in the user-facing instructions — it is one less thing to type and
-  to mistype. Either way, verify before handing over: the first command a non-technical user
-  types has to work.
+- ~~Confirm the slash-command strings.~~ **Done** — a live install registers them namespaced
+  (`clients:queue`, `clients:setup`, …), so the instructions above are correct as written.
 - Scheduled tasks run in the cloud against connectors and files saved to your Claude account.
   Confirm a scheduled `/clients:queue` can reach the local project folder; if it cannot, move
   `style-profile.md` and `clients/` to a location the cloud run can read.
