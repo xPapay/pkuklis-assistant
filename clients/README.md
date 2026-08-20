@@ -23,11 +23,10 @@ xPapay/pkuklis-assistant
 **2. Install**
 
 Find **Client Operations** in the list and click **Install**. You will be offered sign-in
-prompts for **monday.com**, **tl;dv**, and **Slack** — accept all three.
+prompts for **monday.com**, **tl;dv**, **Slack**, and **Butterstaff** — accept them all.
 
-If your team uses **Butterstaff**, add it under **Customize → Connectors → Add custom
-connector** with the URL your team uses. It is optional, but it is what lets the assistant
-answer product questions from the source rather than guessing — the largest single category
+You will also be offered **Butterstaff**. Accept it — it is what lets the assistant answer
+product questions from the source rather than guessing, which is the largest single category
 of client mail.
 
 **3. Connect Gmail and Calendar**

@@ -48,10 +48,8 @@ rather than an explanation:
 - monday.com / notetaker → these were offered during install. If skipped, they are under
   **Customize → Plugins → Client Operations → Connectors**.
 
-If `~~product` is missing and `.mcp.json` has an empty url for it, it has to be added as a
-custom connector: **Customize → Connectors → Add custom connector**, then paste the URL and
-sign in. Ask the user for the URL if it is not in `preferences.md`, and record it there once
-it works so nobody has to find it again.
+`~~product` is offered at install like the other bundled connectors. If it was skipped, it
+is under **Customize → Plugins → Client Operations → Connectors**.
 
 It is optional but high value — without it, product questions cannot be answered from source
 and will be handed back rather than drafted. Say so plainly rather than quietly degrading.

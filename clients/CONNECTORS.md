@@ -23,8 +23,8 @@ products, so swapping a tool later does not require rewriting the skills.
 
 ## Two kinds of connector
 
-**Bundled (hosted MCP).** monday.com, tl;dv, and Slack ship in `.mcp.json` with their server
-URLs. Installing the plugin offers a sign-in prompt for each — one OAuth click, no
+**Bundled (hosted MCP).** monday.com, tl;dv, Slack, and Butterstaff ship in `.mcp.json` with
+their server URLs. Installing the plugin offers a sign-in prompt for each — one OAuth click, no
 configuration.
 
 Slack is the one exception to "no configuration": it does not support dynamic client
@@ -66,9 +66,9 @@ Butterstaff answers two different kinds of question, so it fills two placeholder
   only connector that knows whether a client is actually **using** the product, as opposed to
   what a project board claims about them.
 
-It is not in Anthropic's connector directory — it is added by URL. If the `url` field above
-is empty, it has not been configured; `/clients:setup` will walk the user through adding it
-as a custom connector.
+It is not in Anthropic's connector directory, but it is bundled here by URL
+(`https://butterstaff.com/mcp`), so installing the plugin offers a sign-in prompt like any
+other connector. It supports dynamic client registration, so no client id is pinned.
 
 ### Two rules when using it
 

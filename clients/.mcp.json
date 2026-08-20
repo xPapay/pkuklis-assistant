@@ -18,7 +18,7 @@
     },
     "butterstaff": {
       "type": "http",
-      "url": ""
+      "url": "https://butterstaff.com/mcp"
     },
     "gmail": {
       "type": "http",
